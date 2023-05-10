@@ -213,6 +213,7 @@ class CalcNSH:
         
         uni_CE_TAIL_seq=Seq("CTCTTGGAAAGAAAGTGAAGTG", IUPAC.unambiguous_dna)
         uni_LE_TAIL_seq=Seq("JTATJCGCJCTGFTATJCCGT", IUPAC.unambiguous_dna)
+        
         ########LCS############# 3.0系统的NSH主要来源于Linkers！2023.5.10
         Calc_Seq=Seq(Calc_Seq, IUPAC.unambiguous_dna).upper()
         

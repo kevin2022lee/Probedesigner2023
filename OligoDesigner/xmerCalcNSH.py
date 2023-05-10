@@ -267,7 +267,7 @@ class CalcNSH:
                 i=i+1
             data_CD['score_x4mer_CD']=score_x4mer_CD
             NSH_Score_CD_SACE=sum(data_CD['score_x4mer_CD'])*WF_CEtoCD
-            NSH_Score_CD_SALE=sum(data_AB['score_x4mer_CD'])*WF_LEtoCD
+            NSH_Score_CD_SALE=sum(data_CD['score_x4mer_CD'])*WF_LEtoCD
         else:
             NSH_Score_CD_SACE=0
             NSH_Score_CD_SALE=0

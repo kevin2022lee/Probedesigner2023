@@ -214,7 +214,7 @@ class CalcNSH:
         uni_CE_TAIL_seq=Seq("CTCTTGGAAAGAAAGTGAAGTG", IUPAC.unambiguous_dna)
         uni_LE_TAIL_seq=Seq("JTATJCGCJCTGFTATJCCGT", IUPAC.unambiguous_dna)
         
-        ########LCS############# 3.0 NSH all from Linkers！2023.5.10
+        ########LCS############# 3.0 NSH all from Linkers   2023.5.10##########fuck code#############
         Calc_Seq=Seq(Calc_Seq, IUPAC.unambiguous_dna).upper()
         
         x4merlcs_AB=self.lcs(str(uni_AB_seq),str(Calc_Seq))

@@ -1,7 +1,7 @@
 class CalcCELENSH:
     def __init__(self):
         pass
-    '''This a Class that can calculate the NSH and LCS'''
+    '''This is a Class that can calculate the NSH and LCS'''
     def lcs(self,first,second):  
         first_length = len(first)  
         second_length = len(second)  

@@ -1333,11 +1333,11 @@ def GenerateProbeset(req):
                 if LE_final_list.index(LE_final_list[k])%4==0:
                     LE_final_final_list.append((LE_final_list[k][0],'jgacfattjgg'+LE_final_list[k][1]))
                 elif LE_final_list.index(LE_final_list[k])%4==2:
-                    LE_final_final_list.append((LE_final_list[k][0],'jgacfattjgg'+LE_final_list[k][1]+'tgftatjccgt'))
+                    LE_final_final_list.append((LE_final_list[k][0],'tgftatjccgt'+LE_final_list[k][1]+'tgftatjccgt'))
                 elif LE_final_list.index(LE_final_list[k])%4==3:
-                    LE_final_final_list.append((LE_final_list[k][0],LE_final_list[k][1]+'cjaccjgaajt'))
+                    LE_final_final_list.append((LE_final_list[k][0],'jgacfattjgg'+LE_final_list[k][1]+'jgacfattjgg'))
                 elif LE_final_list.index(LE_final_list[k])%4==1:
-                    LE_final_final_list.append((LE_final_list[k][0],'jtatjcgcjc'+LE_final_list[k][1]+'cjaccjgaajt'))
+                    LE_final_final_list.append((LE_final_list[k][0],LE_final_list[k][1]+'tgftatjccgt'))
         return render_to_response('generateprobes.html',{
                                       'local':local,
                                       'thisyear':thisyear,

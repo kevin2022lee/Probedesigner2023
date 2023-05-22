@@ -168,10 +168,10 @@ def oligoOD(s):
 #################################碱基互补配对函数######################################################################   
 re_seq=''
 def replace_RAGTC(seq):
-    seq=seq.replace('AAAAAAAAAA','')
-    seq=seq.replace('TTTTTTTTTT','')
-    seq=seq.replace('CCCCCCCCCC','')
-    seq=seq.replace('GGGGGGGGGG','')
+    seq=seq.replace('AAAAAAAAAAAAAAA','')
+    seq=seq.replace('TTTTTTTTTTTTTT','')
+    seq=seq.replace('CCCCCCCCCCCCCCC','')
+    seq=seq.replace('GGGGGGGGGGGGGGG','')
     return  seq
 def reverseOligo(ss):
     if len(ss)!= 0:

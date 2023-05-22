@@ -3,6 +3,83 @@
  <title>CE和LE探针的NSH结果</title>
  <script src="../static/js/jquery.base64.js"></script>
  <script src="../static/js/tableExport.js"></script>
+ <script type="text/javascript">
+        $(function () {
+            var pretime = $('#pretime').html();
+            //farward引物样式
+            $('.fmatch').each(function () {
+                $(this).click(function(){
+                    $('#pretime').html(pretime);
+                    var matchText = $(this).text();
+                    //alert(matchText);
+                    var regExp = new RegExp(matchText, 'g');
+                    var html = $('#pretime').html();
+                    var newHtml = html.replace(regExp, '<span class="fhighlight">' + matchText + '</span>');
+                    $('#pretime').html(newHtml);
+                    flag = 1;
+
+                    if (flag) {
+                        if ($(".fhighlight").size() > 1) {
+                            var _top = $(".fhighlight").eq(0).offset().top;
+                            $("html,body").animate({
+                                "scrollTop": _top
+                                }, 500)
+                            }
+                        }
+                    
+                    })
+            });
+            //internal 引物样式
+            
+            $('.imatch').each(function () {
+                $(this).click(function(){
+                    $('#pretime').html(pretime);
+                    var matchText = $(this).text();
+                    //alert(matchText);
+                    var regExp = new RegExp(matchText, 'g');
+                    var html = $('#pretime').html();
+                    var newHtml = html.replace(regExp, '<span class="ihighlight">' + matchText + '</span>');
+                    $('#pretime').html(newHtml);
+                    flag = 1;
+
+                    if (flag) {
+                        if ($(".ihighlight").size() > 1) {
+                            var _top = $(".ihighlight").eq(0).offset().top;
+                            $("html,body").animate({
+                                "scrollTop": _top
+                                }, 500)
+                            }
+                        }
+                    
+                    })
+            });
+            
+            //reverse 引物样式
+            $('.rmatch').each(function () {
+                $(this).click(function(){
+                    $('#pretime').html(pretime);
+                    var matchText = $(this).text();
+                    //alert(matchText);
+                    var regExp = new RegExp(matchText, 'g');
+                    var html = $('#pretime').html();
+                    var newHtml = html.replace(regExp, '<span class="rhighlight">' + matchText + '</span>');
+                    $('#pretime').html(newHtml);
+                    flag = 1;
+
+                    if (flag) {
+                        if ($(".rhighlight").size() > 1) {
+                            var _top = $(".rhighlight").eq(0).offset().top;
+                            $("html,body").animate({
+                                "scrollTop": _top
+                                }, 500)
+                            }
+                        }
+                    
+                    })
+            });
+            
+        });
+    </script>
 <div class="panel panel-info" >
 <div class="panel-heading">
         <b>生产QuantiMAT 2.0 探针引物序列（另存为xls格式文件）</b>
@@ -14,6 +91,13 @@
 <th>Probe Number</th>
 <th>Sequence</th>
 <th>Function</th>
+</tr>
+<tr>
+<th colspan="3" style="word-break:break-all; word-wrap:break-word; white-space:inherit">
+<div id="pretime">
+{{seqtxt}}
+</div>
+</th>
 </tr>
 </thead>
 <tbody>

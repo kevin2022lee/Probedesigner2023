@@ -231,7 +231,7 @@ def reverseOligo(ss):
 def subseq(request):
     if request.method=='POST':
         oligoseq=request.POST['oligoBox']
-        request.session['sequence']=oligoseq
+        request.session['raw_seq']=oligoseq
         seqlen=len(oligoseq)
         if seqlen !=0:
             acount=oligoseq.count('A')
@@ -654,6 +654,7 @@ def NonNshFilter(req):
         probelist1=nonnshfilter.filterSequence(seqtxt,52,55)
         probelist2=nonnshfilter.filterSequence(seqtxt,48,52)
         s=seqtxt.upper()
+        req.session['sequence']=s
         probelist.append(len(s))
         probelist1.append(len(s))
         probelist2.append(len(s))

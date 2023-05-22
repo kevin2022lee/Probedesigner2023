@@ -231,7 +231,7 @@ def reverseOligo(ss):
 def subseq(request):
     if request.method=='POST':
         oligoseq=request.POST['oligoBox']
-        
+        request.session['sequence']=oligoseq
         seqlen=len(oligoseq)
         if seqlen !=0:
             acount=oligoseq.count('A')

@@ -12,7 +12,7 @@ from OligoDesigner.primerviews import primerdesigner
                 $(this).click(function(){
                     $('#pretime').html(pretime);
                     var matchText = $(this).text().slice(0,6);
-                    //alert(matchText);
+                    alert(matchText);
                     var regExp = new RegExp(matchText, 'g');
                     var html = $('#pretime').html();
                     var newHtml = html.replace(regExp, '<span class="phighlight">' + matchText + '</span>');
@@ -36,7 +36,7 @@ from OligoDesigner.primerviews import primerdesigner
                 $(this).click(function(){
                     $('#pretime').html(pretime);
                     var matchText = $(this).text().slice(0,-29);
-                    //alert(matchText);
+                    alert(matchText);
                     var regExp = new RegExp(matchText, 'g');
                     var html = $('#pretime').html();
                     var newHtml = html.replace(regExp, '<span class="chighlight">' + matchText + '</span>');
@@ -60,7 +60,7 @@ from OligoDesigner.primerviews import primerdesigner
                 $(this).click(function(){
                     $('#pretime').html(pretime);
                     var matchText = $(this).text().slice(0,-29);
-                    //alert(matchText);
+                    alert(matchText);
                     var regExp = new RegExp(matchText, 'g');
                     var html = $('#pretime').html();
                     var newHtml = html.replace(regExp, '<span class="bhighlight">' + matchText + '</span>');

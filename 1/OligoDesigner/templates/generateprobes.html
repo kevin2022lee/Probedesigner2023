@@ -11,8 +11,7 @@ from OligoDesigner.primerviews import primerdesigner
             $('.pmatch').each(function () {
                 $(this).click(function(){
                     $('#pretime').html(pretime);
-                    var matchText = $(this).text().slice(0,6);
-                    alert(matchText);
+                    var matchText = $(this).text();
                     var regExp = new RegExp(matchText, 'g');
                     var html = $('#pretime').html();
                     var newHtml = html.replace(regExp, '<span class="phighlight">' + matchText + '</span>');
@@ -32,10 +31,10 @@ from OligoDesigner.primerviews import primerdesigner
             });
             //Caputure primers 引物样式
             
-            $('.cmatch').each(function () {
+            $('.cpmatch').each(function () {
                 $(this).click(function(){
                     $('#pretime').html(pretime);
-                    var matchText = $(this).text().slice(0,-29);
+                    var matchText = $(this).text().slice(0,-21);
                     alert(matchText);
                     var regExp = new RegExp(matchText, 'g');
                     var html = $('#pretime').html();
@@ -55,11 +54,12 @@ from OligoDesigner.primerviews import primerdesigner
                     })
             });
             
-            //reverse 引物样式
-            $('.bmatch').each(function () {
+            //Label primers 引物样式
+            
+            $('.bpmatch').each(function () {
                 $(this).click(function(){
                     $('#pretime').html(pretime);
-                    var matchText = $(this).text().slice(0,-29);
+                    var matchText = $(this).text();
                     alert(matchText);
                     var regExp = new RegExp(matchText, 'g');
                     var html = $('#pretime').html();

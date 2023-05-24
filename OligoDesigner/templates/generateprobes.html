@@ -35,7 +35,7 @@ from OligoDesigner.primerviews import primerdesigner
                 $(this).click(function(){
                     $('#pretime').html(pretime);
                     var matchText = $(this).text().slice(0,-21);
-                    alert(matchText);
+                    //alert(matchText);
                     var regExp = new RegExp(matchText, 'g');
                     var html = $('#pretime').html();
                     var newHtml = html.replace(regExp, '<span class="chighlight">' + matchText + '</span>');
@@ -59,8 +59,8 @@ from OligoDesigner.primerviews import primerdesigner
             $('.bpmatch').each(function () {
                 $(this).click(function(){
                     $('#pretime').html(pretime);
-                    var matchText = $(this).text();
-                    alert(matchText);
+                    var matchText = $(this).text().slice(0,-19);;
+                    //alert(matchText);
                     var regExp = new RegExp(matchText, 'g');
                     var html = $('#pretime').html();
                     var newHtml = html.replace(regExp, '<span class="bhighlight">' + matchText + '</span>');

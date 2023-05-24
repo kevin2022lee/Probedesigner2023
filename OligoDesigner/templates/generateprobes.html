@@ -35,7 +35,7 @@ from OligoDesigner.primerviews import primerdesigner
             $('.cmatch').each(function () {
                 $(this).click(function(){
                     $('#pretime').html(pretime);
-                    var matchText = $(this).text().slice(0,-21);
+                    var matchText = $(this).text().slice(0,-29);
                     //alert(matchText);
                     var regExp = new RegExp(matchText, 'g');
                     var html = $('#pretime').html();
@@ -59,7 +59,7 @@ from OligoDesigner.primerviews import primerdesigner
             $('.bmatch').each(function () {
                 $(this).click(function(){
                     $('#pretime').html(pretime);
-                    var matchText = $(this).text().slice(0,-19);
+                    var matchText = $(this).text().slice(0,-29);
                     //alert(matchText);
                     var regExp = new RegExp(matchText, 'g');
                     var html = $('#pretime').html();

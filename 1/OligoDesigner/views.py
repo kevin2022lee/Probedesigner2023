@@ -242,7 +242,7 @@ def subseq(request):
             Tm=oligoTm(oligoseq)
             OD=oligoOD(oligoseq)
             reverse=reverseOligo(oligoseq)
-            request.session['raw_seq']=reverse
+            #request.session['raw_seq']=reverse
             pl=probeList(reverse)
         else:
             acount=0
@@ -654,7 +654,7 @@ def NonNshFilter(req):
         probelist1=nonnshfilter.filterSequence(seqtxt,52,55)
         probelist2=nonnshfilter.filterSequence(seqtxt,48,52)
         s=seqtxt.upper()
-        req.session['sequence']=s
+        req.session['sequence']=reverseOligo(s)
         probelist.append(len(s))
         probelist1.append(len(s))
         probelist2.append(len(s))
@@ -1346,7 +1346,7 @@ def GenerateProbeset(req):
                                       'CE_final_list':CE_final_list,
                                       'BL_final_list':BL_final_list,
                                       'LE_final_final_list':LE_final_final_list,
-                                      'raw_seq':req.session.get('raw_seq'),
+                                      'raw_seq':req.session.get('sequence'),
                                       },context_instance=RequestContext(req))
 ############################################################################################################
 def Probesetsgenerate(req):

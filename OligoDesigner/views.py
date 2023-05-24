@@ -1346,7 +1346,7 @@ def GenerateProbeset(req):
                                       'CE_final_list':CE_final_list,
                                       'BL_final_list':BL_final_list,
                                       'LE_final_final_list':LE_final_final_list,
-                                      'raw_seq':req.session.get('sequence'),
+                                      'raw_seq':req.session.get('raw_seq'),
                                       },context_instance=RequestContext(req))
 ############################################################################################################
 def Probesetsgenerate(req):

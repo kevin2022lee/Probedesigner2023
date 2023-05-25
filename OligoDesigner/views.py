@@ -472,7 +472,7 @@ def entrezseqidtoxml(request):
 #         response.set_cookie("seq",replace_RAGTC(str(record.seq[Start-1:])))
         request.session['nrid']=record.id
         request.session['des']=record.description
-        request.session['secds']=Start+":"+End
+        request.session['secds']=str(Start)+":"+str(End)
         return response
 #########远程访问Entrez数据库#####################    
 ######################检查Accession ID并返回长度############################################################

@@ -321,7 +321,7 @@ def entreztoxml(request):
         cname=content.name
         cname_rb=base64.encodestring(datetime.now().strftime("%Y%m%d%H%M%S%f")+'_'+str(len(cname)))[:-3]+'.'+cname.split('.')[-1]
         fileurl = s.put(domain_name, cname_rb, ob)
-        time.sleep(10)
+        time.sleep(5)
         from Bio import Entrez,SeqIO
         import urllib
         from urllib import urlopen
@@ -452,7 +452,7 @@ def entrezseqidtoxml(request):
         End=int(request.POST['end'])
         handle=Entrez.efetch(db="nucleotide",rettype="gb",retmote="text",id=SeqId)
         record=SeqIO.read(handle,"gb")
-        time.sleep(10)
+        time.sleep(5)
         handle.close()
         cookie=Cookie.SimpleCookie()
         response=render_to_response('parselocalfile.html',{
@@ -470,7 +470,9 @@ def entrezseqidtoxml(request):
                                                        'topology':record.annotations['topology'],
                                                            },context_instance=RequestContext(request))
 #         response.set_cookie("seq",replace_RAGTC(str(record.seq[Start-1:])))
-        response.set_cookie("des",record.description)
+        request.session['nrid']=record.id
+        request.session['des']=record.description
+        request.session['secds']=Start+":"+End
         return response
 #########远程访问Entrez数据库#####################    
 ######################检查Accession ID并返回长度############################################################
@@ -1347,6 +1349,9 @@ def GenerateProbeset(req):
                                       'BL_final_list':BL_final_list,
                                       'LE_final_final_list':LE_final_final_list,
                                       'raw_seq':req.session.get('sequence'),
+                                      'des':req.session.get('des'),
+                                      'nrid':req.session.get('nrid'),
+                                      'secds':req.session.get('secds')
                                       },context_instance=RequestContext(req))
 ############################################################################################################
 def Probesetsgenerate(req):

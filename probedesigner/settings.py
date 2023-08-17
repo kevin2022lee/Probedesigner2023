@@ -60,7 +60,7 @@ MYSQL_PORT = '3306'
 
 MYSQL_USER = 'gene_user'
 
-MYSQL_PASS = '8588027'
+MYSQL_PASS = '******'
 
 MYSQL_DB   = 'gene_database'
 
